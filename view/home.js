@@ -3,24 +3,13 @@ var con=require('./../db')
 var router = express.Router();
 const util = require('util');
 
-
+//4 
   const query = util.promisify(con.query).bind(con);
-  router.post('/one',(req,res)=>   {
-    data(req.body)
-    res.send("data inserted successfully in customer table")
-  })
   
-  let data=async(data) => {
-    var sql = "Insert into customer (customer_id,customer_name,customer_city) values ('"+data.customer_id+"','"+data.customer_name+"','"+data.customer_city+"')";
-    con.query(sql, function(err,result){
-    if (err) throw err;
-    console.log("data inserted successfully");
-    });
-    }
 
     router.post('/two',(req,res)=>   {
       data1(req.body)
-      res.send("data inserted successfully in purchase table")
+      res.send("data inserted successfully in customer table")
     })
     let data1=async(data) => {
       var sql = "Insert into customer (customer_id,customer_name,customer_city) values ('"+data.customer_id+"','"+data.customer_name+"','"+data.customer_city+"')";
